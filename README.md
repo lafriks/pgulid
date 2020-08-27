@@ -27,6 +27,7 @@ A ULID however:
 
 ```sql
 SELECT generate_ulid(); -- Output: 01D45VGTV648329YZFE7HYVGWC
+SELECT parse_ulid_timestamp('01D45VGTV648329YZFE7HYVGWC'); -- Output: 2019-02-20 16:23:49.35+00
 ```
 
 ## Specification
@@ -35,17 +36,16 @@ Below is the current specification of ULID as implemented in this repository.
 
 ### Components
 
-**Timestamp**
-- 48 bits
-- UNIX-time in milliseconds
-- Won't run out of space till the year 10895 AD
-
-**Entropy**
-- 80 bits
+- Timestamp
+  - 48 bits
+  - UNIX-time in milliseconds
+  - Won't run out of space till the year 10895 AD
+- Entropy
+  - 80 bits
 
 ### String Representation
 
-```
+```text
  01AN4Z07BY      79KA1307SR9X4MV3
 |----------|    |----------------|
  Timestamp           Entropy

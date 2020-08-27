@@ -1,0 +1,6 @@
+
+# pgulid extension
+comment = 'provides ULID generation and parsing'
+default_version = '1.0'
+relocatable = true
+requires = pgcrypto
