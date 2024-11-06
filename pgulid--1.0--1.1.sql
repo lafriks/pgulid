@@ -1,5 +1,5 @@
--- complain if script is sourced in psql, rather than via CREATE EXTENSION
-\echo Use "CREATE EXTENSION pgulid" to load this file.\quit
+-- complain if script is sourced in psql, rather than via ALTER EXTENSION
+\echo Use "ALTER EXTENSION pgulid UPDATE TO '1.1'" to load this file. \quit
 
 -- pgulid is based on OK Log's Go implementation of the ULID spec
 --
@@ -18,9 +18,6 @@
 -- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 -- See the License for the specific language governing permissions and
 -- limitations under the License.
-
--- complain if script is sourced in psql, rather than via ALTER EXTENSION
-\echo Use "ALTER EXTENSION pgulid UPDATE TO '1.1'" to load this file. \quit
 
 CREATE OR REPLACE FUNCTION generate_ulid()
 RETURNS TEXT
